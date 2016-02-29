@@ -1,0 +1,3 @@
+# qlkh
+
+Phần mềm QLKH
