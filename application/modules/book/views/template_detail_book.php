@@ -28,59 +28,87 @@
         </div>
     <?php } ?>
      <form action="<?php echo base_url().$url ?>" method="post" id="frmUpdate">
+     <?php foreach ($content as $value) { ?>
+            <input type="hidden" name="mssach" value="<?php  echo $value['MSSACH'] ?>">
             <ul class="form">
                 <li>
                     <label class="text-head">Tên sách</label>
-                    <input class="form-control"  type="text" name="tensach" value="">
+                    <input class="form-control"  type="text" name="tensach" value="<?php  echo $value['TENSACH'] ?>">
                 </li>
                 <li>
                     <label class="text-head">Tên tác giả</label>
-                    <input class="form-control" type="text" name="tentg" value="">
+                    <input class="form-control" type="text" name="tentg" value="<?php  echo $value['TENTG'] ?>">
                 </li>
                 <li>
                     <label class="text-head">Giới tính</label>
                     <select  name="gioitinh" id="sex" class="form-control">
-                      <option value="1">Nam</option>
-                      <option value="0">Nữ</option>
-                      <option value="2">Nam - Nữ</option>
-                    </select>
+                    <?php if ($value['GIOITINH'] == 0 ) { ?>
+                      
+                        <option value="1">Nam</option>
+                        <option value="0" selected="selected">Nữ</option>
+                        <option value="2">Nam - Nữ</option>
+                    <?php } elseif ($value['GIOITINH'] == 1) { ?>
+                          <option value="1" selected="selected">Nam</option>
+                          <option value="0">Nữ</option>
+                          <option value="2">Nam - Nữ</option>
+                      <?php } else { ?>
+                          <option value="1">Nam</option>
+                          <option value="0">Nữ</option>
+                          <option value="2" selected="selected">Nam - Nữ</option>
+                        
+                      <?php } ?>
+                      </select>
                 </li>
                 <li>
                     <label class="text-head">Đơn vị</label>
-                    <select class="form-control" name="donvi">
-                    <?php foreach ($dmKhoa as $value) { ?>
-                        <option value="<?php echo $value['MSKHOA'] ?>"><?php echo $value['TENKHOA'] ?></option>
-                     <?php } ?>
+                    <select class="form-control" name="donvi" id="donvi">
+                    <?php foreach ($dmKhoa as $dv) { 
+                      if ($value['DONVI'] == $dv['MSKHOA']) {?>
+                        <option selected="selected" value="<?php echo $dv['MSKHOA'] ?>"><?php echo $dv['TENKHOA'] ?></option>
+                     <?php } else { ?>
+                        <option value="<?php echo $dv['MSKHOA'] ?>"><?php echo $dv['TENKHOA'] ?></option>
+                     <?php
+                          }
+                        } 
+                     ?>
                     </select>
                 </li>
                 <li>
                     <label class="text-head">Nhà xuất bản</label>
                     <select  name="nxb" class="form-control">
-                      <?php foreach ($nhaxuatban as $value) { ?>
-                        <option value="<?php echo $value['MSNXB'] ?>"><?php echo $value['TENNXB'] ?></option>
-                     <?php } ?>
+                      <?php foreach ($nhaxuatban as $nxb) { 
+                      if ($nxb['MSNXB'] == $value['NXB']) {?>
+                        <option selected="selected" value="<?php echo $nxb['MSNXB'] ?>"><?php echo $nxb['TENNXB'] ?></option>
+                        <?php } else { ?>
+                        <option value="<?php echo $nxb['MSNXB'] ?>"><?php echo $nxb['TENNXB'] ?></option>
+                     <?php }
+                     } ?>
                     </select>
                 </li>
                 <li>
                     <label class="text-head">Năm xuất bản</label>
-                    <input type="text" class="form-control" name="namxb">
+                    <input type="text" class="form-control" name="namxb" value="<?php  echo $value['NAMXB'] ?>">
                 </li>
                 <li>
                     <label class="text-head">Thể loại sách</label>
                     <select  name="theloaisach" class="form-control">
-                      <?php foreach ($theloaisach as $value) { ?>
-                        <option value="<?php echo $value['MSTHELOAI'] ?>"><?php echo $value['TENTHELOAI'] ?></option>
-                     <?php } ?>
+                      <?php foreach ($theloaisach as $theloai) { 
+                      if ($value['THELOAI'] == $theloai['MSTHELOAI']) {?>
+                        <option selected="selected" value="<?php echo $theloai['MSTHELOAI'] ?>"><?php echo $theloai['TENTHELOAI'] ?></option>
+                        <?php  } else { ?>
+                        <option value="<?php echo $theloai['MSTHELOAI'] ?>"><?php echo $theloai['TENTHELOAI'] ?></option>
+                     <?php }
+                     } ?>
                     </select>
                 </li>
                 <li>
                     <label class="text-head">Quốc gia</label>
                     <select  name="quocgia" class="form-control">
-                      <?php foreach ($quocgia as $value) { ?>
-                        <?php if ($value['MSQG'] == 1) { ?>
-                          <option selected="selected" value="<?php echo $value['MSQG'] ?>"><?php echo $value['TENQG'] ?></option>
+                      <?php foreach ($quocgia as $qg) { ?>
+                        <?php if ($value['QUOCGIA'] == $qg['MSQG']) { ?>
+                          <option selected="selected" value="<?php echo $qg['MSQG'] ?>"><?php echo $qg['TENQG'] ?></option>
                         <?php } else { ?>
-                        <option value="<?php echo $value['MSQG'] ?>"><?php echo $value['TENQG'] ?></option>
+                        <option value="<?php echo $qg['MSQG'] ?>"><?php echo $qg['TENQG'] ?></option>
                      <?php }
                      } ?>
                     </select>
@@ -94,7 +122,7 @@
               <button class="btn" name="submit" type="submit" id="btnSubmit"><i class="fa fa-save"></i> Lưu thông tin</button>
               <button class="btn grey" id="btn-add-history" type="reset"><i class="fa fa-plus-circle"></i> Hủy bỏ</button>
             </div>
-            
+        <?php } ?>
       </form>
       <div id="to_top_2"></div>
   </section>

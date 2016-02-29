@@ -7,6 +7,7 @@ class Model_quocgia extends CI_Model{
 	}
 	
 	public function listAll() {
+		$this->db->order_by("TENQG", "asc");
 		return $this->db->get($this->_table)->result_array();
 	}
 	public function detail($id) {

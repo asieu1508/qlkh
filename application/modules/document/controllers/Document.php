@@ -96,7 +96,7 @@ class Document extends CI_Controller{
             else {
                 $this->session->set_flashdata('flag', '2');
                 $this->session->set_flashdata('action', $action);
-                redirect(base_url('document/add/'.$id));
+                redirect(base_url('document/add/'));
             }
         }
         else {

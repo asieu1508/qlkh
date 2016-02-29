@@ -1,9 +1,9 @@
 <section class="body">
     <section class="body-left" style="width:100%">
       <!-- Begin search -->
-      <form action="<?php echo base_url() ?>document/searchresuft" method="post" id="form-top-search">
+      <form action="<?php echo base_url() ?>book/searchresuft" method="post" id="form-top-search">
         <div class="input-group search">
-              <input type="text" class="form-control" name="search" placeholder="Tìm kiếm đề tài cấp trường" id="search-topic">
+              <input type="text" class="form-control" name="search" placeholder="Tìm kiếm sách" id="search-book">
               <span class="input-group-btn ">
                 <button class="btn btn-default icon" name="submit">
                    <i class="fa fa-search"></i>
@@ -19,12 +19,8 @@
         <legend>Chọn điều kiện:</legend>
         <ul>
           <li>
-            <label class="head-text">Từ ngày</label>
-            <input type="text" id="ngayBD" name="ngaybd" class="form-control datepicker">
-          </li>
-          <li>
-            <label class="head-text">Đến ngày</label>
-            <input type="text" id="ngayKT" name="ngaykt" class="form-control datepicker">
+            <label class="head-text">Năm</label>
+            <input type="text" id="namxb" name="namxb" class="form-control">
           </li>
           <li>
             <label class="head-text">Đơn vị</label>
@@ -42,24 +38,6 @@
               <option value="1">Nam</option>
               <option value="0">Nữ</option>
               <option value="2">Nam - Nữ</option>
-            </select>
-          </li>
-          <li>
-              <label class="text-head">Hiện trạng đề tài</label>
-              <select class="form-control" name="htdt" id="hientrang">
-                <option value="-1">Tất cả</option>
-              <?php foreach ($hientrang as $value) { ?>
-                  <option value="<?php echo $value['MAHT'] ?>"><?php echo $value['TENHT'] ?></option>
-               <?php } ?>
-              </select>
-          </li>
-          <li>
-            <label class="head-text">LOẠI TÀI LIỆU</label>
-            <select class="form-control" name="loaitlgd" id="loaitlgd">
-            <option value="-1">Tất cả</option>
-            <?php foreach ($loaitlgd as $value) { ?>
-                <option value="<?php echo $value['MALOAI'] ?>"><?php echo $value['TENLOAI'] ?></option>
-            <?php } ?>
             </select>
           </li>
         </ul>

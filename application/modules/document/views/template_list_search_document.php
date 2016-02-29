@@ -3,7 +3,7 @@
       <!-- Begin search -->
       <form action="<?php echo base_url() ?>document/searchresuft" method="post" id="form-top-search">
         <div class="input-group search">
-              <input type="text" class="form-control" name="search" placeholder="Tìm kiếm đề tài cấp trường" id="search-document">
+              <input type="text" class="form-control" name="search" placeholder="Tìm kiếm TLGD" id="search-document">
               <span class="input-group-btn ">
                 <button class="btn btn-default icon" name="submit">
                    <i class="fa fa-search"></i>

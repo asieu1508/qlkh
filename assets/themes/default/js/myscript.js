@@ -11,7 +11,7 @@ window.onload = function() {
         $('body').removeClass('sidebar-mini');
         widthLoad();
     }
-    widthLoad();
+    // widthLoad();
 }
 $(function() {
     $('.mainMenu .icon').click(function(event) {

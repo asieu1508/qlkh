@@ -12,17 +12,19 @@ class Model_book extends CI_Model{
 
 	public function listAllDesc() {
 		$this->db->select('*');
-		$this->db->from($this->_table. " as a, theloaisach as b, nhaxuatban as c");
+		$this->db->from($this->_table. " as a, theloaisach as b, nhaxuatban as c, ms_khoa_tt as d");
 		$this->db->where('a.THELOAI = b.MSTHELOAI');
 		$this->db->where('a.NXB     = c.MSNXB');
+		$this->db->where('a.DONVI     = d.MSKHOA');
 		$this->db->order_by("a.MSSACH", "desc");
 		$query = $this->db->get(); 
 		return $query->result_array();
 	}
 	public function selectLimit($perpage, $offset){ 
-		$str = $this->_table. " as a, theloaisach as b, nhaxuatban as c";
+		$str = $this->_table. " as a, theloaisach as b, nhaxuatban as c, ms_khoa_tt as d";
 		$this->db->where('a.THELOAI = b.MSTHELOAI');
 		$this->db->where('a.NXB     = c.MSNXB');
+		$this->db->where('a.DONVI     = d.MSKHOA');
 		$this->db->order_by("a.MSSACH", "desc");
 
 	    $query =  $this->db->get($str, $perpage,$offset); 
@@ -58,17 +60,14 @@ class Model_book extends CI_Model{
 	}
 	public function search($string) {
 		$this->db->from($this->_table);
-		$this->db->where("MSSACH LIKE '%".$string."%' OR TENTG LIKE '%".$string."%' OR TENTLGD LIKE '%". $string ."%'");
+		$this->db->where("TENSACH LIKE '%".$string."%' OR TENTG LIKE '%".$string."%' OR NAMXB LIKE '%". $string ."%'");
 		$query = $this->db->get();
 	    return $query->result_array();
 	}
 	public function getStatistics($sql) {
-		$this->db->from($this->_table." AS a, hientrang_tlgd AS b, ms_khoa_tt AS c,  loai_tlgd d");
+		$this->db->from($this->_table." as a, ms_khoa_tt as b");
 		$this->db->where($sql);
-		$this->db->where('a.HIENTRANG  = b.MAHT');
-		$this->db->where('a.DONVI    = c.MSKHOA');
-		$this->db->where('a.LOAITLGD = d.MALOAI');
-		$this->db->order_by("a.MSSACH", "desc");
+		$this->db->where('a.DONVI     = b.MSKHOA');
 		$query = $this->db->get();
 	    return $query->result_array();
 	}
