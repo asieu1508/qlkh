@@ -1,0 +1,88 @@
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  clear: both;
+}
+
+.table {
+	width: 100%;
+
+}
+.table-bordered td,
+.table-bordered  th {
+ 	border: 1px solid #ddd;
+ }
+.table-bordered  th {
+	background: #e8e8e8;
+	text-transform: uppercase;
+}
+table td,
+.table th {
+	padding: 5px;
+	font-size: 13px;
+	/*position: relative;*/
+}
+.table th:active {
+	outline: 0;
+}
+.table-striped tr:nth-child(2n) td {
+  background-color: rgba(0,0,0, 0.02);
+}
+.table thead th {
+	padding-right: 15px;
+}
+.table thead tr{
+	background: #D2EBFC;
+}
+.table-container {
+	display: table;
+}
+.table-container .head {
+	font-weight: bold;
+	text-align: center;
+}
+.table-container .row {
+	display: table-row;
+}
+.table-container .column {
+	display: table-cell;
+	vertical-align: middle;
+}
+.table-container.table-bordered {
+	border-top: 1px solid #efefef;
+	border-right: 1px solid #efefef;
+}
+.table-container.table-bordered .column {
+	border-bottom: 1px solid #efefef;
+	border-left: 1px solid #efefef;
+}
+.table-container .column  {
+	padding: 3px;
+}
+.table-container.w-100-per {
+	width: 100%;
+}
+.count table {
+    counter-reset: rowNumber;
+}
+
+.count  table tr{
+    counter-increment: rowNumber;
+}
+.count  table tr td{
+    position: relative;
+}
+.count table tr td:first-child {
+	position: relative;
+}
+.count table tr: td:first-child:before {
+    content: counter(rowNumber);
+    position: absolute;
+    top: 3px;
+    font-weight: bold;
+    width:20px;
+    line-height: 20px;
+    font-size: 12px;
+    background: #D6DCFC;
+    text-align: center;
+}

@@ -1,0 +1,140 @@
+UPDATE dm_tlgd
+SET DONVI='KT'
+WHERE DONVI='Khoa Kinh tế';
+
+UPDATE dm_tlgd
+SET DONVI='CM'
+WHERE DONVI='Khoa KT - CN - MT';
+
+UPDATE dm_tlgd
+SET DONVI='CT'
+WHERE DONVI='Phòng Tổ chức - CT';
+
+UPDATE dm_tlgd
+SET DONVI='DT'
+WHERE DONVI='Phòng Đào tạo';
+
+UPDATE dm_tlgd
+SET DONVI='GH'
+WHERE DONVI='Ban Giám Hiệu';
+
+UPDATE dm_tlgd
+SET DONVI='KD'
+WHERE DONVI='Phòng khảo thí và KĐ';
+
+UPDATE dm_tlgd
+SET DONVI='KH'
+WHERE DONVI='Phòng Kế hoạch - TV';
+
+UPDATE dm_tlgd
+SET DONVI='KT'
+WHERE DONVI='Khoa Kinh tế';
+
+UPDATE dm_tlgd
+SET DONVI='ML'
+WHERE DONVI='Khoa Mác-Lê';
+
+UPDATE dm_tlgd
+SET DONVI='NN'
+WHERE DONVI='Khoa Nông nghiệp';
+
+UPDATE dm_tlgd
+SET DONVI='NT'
+WHERE DONVI='TT Nghiên cứu - PTNT';
+
+UPDATE dm_tlgd
+SET DONVI='NV'
+WHERE DONVI='TT KHXH & NV';
+
+UPDATE dm_tlgd
+SET DONVI='QL'
+WHERE DONVI='Phòng QLKH - HTQT';
+
+UPDATE dm_tlgd
+SET DONVI='QP'
+WHERE DONVI='BM Quốc Phòng';
+
+UPDATE dm_tlgd
+SET DONVI='SP'
+WHERE DONVI='Khoa Sư phạm';
+
+UPDATE dm_tlgd
+SET DONVI='SV'
+WHERE DONVI='Phòng Công tác-SV';
+
+UPDATE dm_tlgd
+SET DONVI='TB'
+WHERE DONVI='Phòng Quản trị - TB';
+
+UPDATE dm_tlgd
+SET DONVI='TC'
+WHERE DONVI='BM Thể chất';
+
+UPDATE dm_tlgd
+SET DONVI='TH'
+WHERE DONVI='TT Tin học';
+
+UPDATE dm_tlgd
+SET DONVI='TL'
+WHERE DONVI='TT Tạo nguồn NL';
+
+UPDATE dm_tlgd
+SET DONVI='TN'
+WHERE DONVI='TT Ngoại ngữ';
+
+UPDATE dm_tlgd
+SET DONVI='TT'
+WHERE DONVI='Phòng Thanh tra - PC';
+
+UPDATE dm_tlgd
+SET DONVI='TV'
+WHERE DONVI='Thư viện';
+
+UPDATE dm_tlgd
+SET DONVI='VH'
+WHERE DONVI='Khoa Văn hoá - NT';
+
+
+
+UPDATE dm_tlgd
+SET HIENTRANG='1'
+WHERE HIENTRANG='Chờ NT';
+
+UPDATE dm_tlgd
+SET HIENTRANG='2'
+WHERE HIENTRANG='Đã NT';
+
+UPDATE dm_tlgd
+SET HIENTRANG='3'
+WHERE HIENTRANG='Ngừng BS';
+
+UPDATE dm_tlgd
+SET HIENTRANG='4'
+WHERE HIENTRANG='Đang BS';
+
+
+
+
+UPDATE dm_tlgd
+SET LOAITLGD='1'
+WHERE LOAITLGD='BIÊN SOẠN';
+
+UPDATE dm_tlgd
+SET LOAITLGD='1'
+WHERE LOAITLGD='Biên soạn';
+
+UPDATE dm_tlgd
+SET LOAITLGD='2'
+WHERE LOAITLGD='BIÊN SOẠN LẠI';
+
+UPDATE dm_tlgd
+SET LOAITLGD='3'
+WHERE LOAITLGD='Biên soạn mới';
+
+UPDATE dm_tlgd
+SET LOAITLGD='4'
+WHERE LOAITLGD='Biên dịch';
+
+
+
+

@@ -1,0 +1,103 @@
+@media (max-width: 899px) {
+	.analyze-global ul li {
+		width: 32%;
+		margin-right: 2%;
+		margin-bottom: 15px;
+	}
+	.analyze-global ul li:nth-child(3n) {
+		margin-right: 0;
+	}
+}
+@media (max-width: 800px) {
+	.body-left, .body-right{
+		width: 100%;
+		  height: auto;
+		  overflow-x: auto;
+	}
+	.body-iframe {
+	  display: none;
+	}
+	.body-left {
+		border-right: 0;
+	}
+	.body {
+		overflow: auto;
+	}
+	.form-control {
+	    line-height: 42px;
+	}
+	select.form-control, .input-group-btn select {
+	    height: 44px;
+	}
+	.input-group-btn select {}
+	.year-old .input-group-btn select {
+	    height: 44px;
+	}
+	.list-pre-2 li.oneday:before, .list-pre-2 li.whenever:before{
+		top: 11px;
+	}
+	.list-pre-1 .col-2 li select {
+		height:20px;
+	}
+	.list-pre-1 table tr td .delete,
+	.list-lasted-patients table tr td .delete {
+		top: 0;
+		right: 0;
+		font-size: 22px;
+	}
+	.login .show-pass {
+		display: block;
+	}
+	.weight:before {
+		top: 11px;
+	}
+	.criteria-group ul li {
+		width: 32%;
+		margin-right: 2%;
+	}
+	.criteria-group ul li:nth-child(3n) {
+		margin-right: 0;
+	}
+}
+
+@media (max-width: 768px) {
+	ul.form-3 li {
+		width: 100%;
+	}
+}
+
+@media (max-width: 560px) {
+	.body {
+		width: 100%;
+		padding-left: 50px;
+	}
+	ul.form li {
+		width: 100%;
+		margin-right: 0 !important;
+	}
+	.analyze-global .block-group-vertical {
+		width: 100%;
+		margin-bottom: 10px;
+	}
+	.criteria-group ul li {
+		width: 49%;
+	}
+	.criteria-group ul li:nth-child(3n) {
+		margin-right: 2%;
+	}
+	.criteria-group ul li:nth-child(2n) {
+		margin-right: 0;
+	}
+}
+@media (max-width: 480px) {
+	
+	.btn {
+		margin:0;
+	}
+	.analyze-global ul li {
+		width: 100%;
+	}
+}
+@media (max-width: 320px) {
+	
+}

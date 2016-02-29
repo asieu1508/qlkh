@@ -1,0 +1,142 @@
+﻿******** Cập nhật đơn vị => mã đơn vị bảng dmdt_ct_ck_sk *************
+
+UPDATE dmdt_ct_ck_sk
+SET DONVI='KT'
+WHERE DONVI='Khoa Kinh tế';
+
+UPDATE dmdt_ct_ck_sk
+SET DONVI='CM'
+WHERE DONVI='Khoa KT - CN - MT';
+
+UPDATE dmdt_ct_ck_sk
+SET DONVI='CT'
+WHERE DONVI='Phòng Tổ chức - CT';
+
+UPDATE dmdt_ct_ck_sk
+SET DONVI='DT'
+WHERE DONVI='Phòng Đào tạo';
+
+UPDATE dmdt_ct_ck_sk
+SET DONVI='GH'
+WHERE DONVI='Ban Giám Hiệu';
+
+UPDATE dmdt_ct_ck_sk
+SET DONVI='KD'
+WHERE DONVI='Phòng khảo thí và KĐ';
+
+UPDATE dmdt_ct_ck_sk
+SET DONVI='KH'
+WHERE DONVI='Phòng Kế hoạch - TV';
+
+UPDATE dmdt_ct_ck_sk
+SET DONVI='KT'
+WHERE DONVI='Khoa Kinh tế';
+
+UPDATE dmdt_ct_ck_sk
+SET DONVI='ML'
+WHERE DONVI='Khoa Mác-Lê';
+
+UPDATE dmdt_ct_ck_sk
+SET DONVI='NN'
+WHERE DONVI='Khoa Nông nghiệp';
+
+UPDATE dmdt_ct_ck_sk
+SET DONVI='NT'
+WHERE DONVI='TT Nghiên cứu - PTNT';
+
+UPDATE dmdt_ct_ck_sk
+SET DONVI='NV'
+WHERE DONVI='TT KHXH & NV';
+
+UPDATE dmdt_ct_ck_sk
+SET DONVI='QL'
+WHERE DONVI='Phòng QLKH - HTQT';
+
+UPDATE dmdt_ct_ck_sk
+SET DONVI='QP'
+WHERE DONVI='BM Quốc Phòng';
+
+UPDATE dmdt_ct_ck_sk
+SET DONVI='SP'
+WHERE DONVI='Khoa Sư phạm';
+
+UPDATE dmdt_ct_ck_sk
+SET DONVI='SV'
+WHERE DONVI='Phòng Công tác-SV';
+
+UPDATE dmdt_ct_ck_sk
+SET DONVI='TB'
+WHERE DONVI='Phòng Quản trị - TB';
+
+UPDATE dmdt_ct_ck_sk
+SET DONVI='TC'
+WHERE DONVI='BM Thể chất';
+
+UPDATE dmdt_ct_ck_sk
+SET DONVI='TH'
+WHERE DONVI='TT Tin học';
+
+UPDATE dmdt_ct_ck_sk
+SET DONVI='TL'
+WHERE DONVI='TT Tạo nguồn NL';
+
+UPDATE dmdt_ct_ck_sk
+SET DONVI='TN'
+WHERE DONVI='TT Ngoại ngữ';
+
+UPDATE dmdt_ct_ck_sk
+SET DONVI='TT'
+WHERE DONVI='Phòng Thanh tra - PC';
+
+UPDATE dmdt_ct_ck_sk
+SET DONVI='TV'
+WHERE DONVI='Thư viện';
+
+UPDATE dmdt_ct_ck_sk
+SET DONVI='VH'
+WHERE DONVI='Khoa Văn hoá - NT';
+
+
+******** Cập nhật Hiện trạng => mã hiện trạng dmdt_ct_ck_sk *************
+
+UPDATE dmdt_ct_ck_sk
+SET HIENTRANG='1'
+WHERE HIENTRANG='Chờ Ký HĐ';
+
+UPDATE dmdt_ct_ck_sk
+SET HIENTRANG='2'
+WHERE HIENTRANG='Đang TH';
+
+UPDATE dmdt_ct_ck_sk
+SET HIENTRANG='3'
+WHERE HIENTRANG='Đã NT';
+
+UPDATE dmdt_ct_ck_sk
+SET HIENTRANG='4'
+WHERE HIENTRANG='Ngưng TH';
+
+UPDATE dmdt_ct_ck_sk
+SET HIENTRANG='5'
+WHERE HIENTRANG='Chờ NT';
+
+
+
+
+
+UPDATE dmdt_ct_ck_sk
+SET LOAIDETAI='CK'
+WHERE MS LIKE 'CK%'
+
+UPDATE dmdt_ct_ck_sk
+SET LOAIDETAI='CT'
+WHERE MS LIKE 'CT%'
+
+UPDATE dmdt_ct_ck_sk
+SET LOAIDETAI='SK'
+WHERE MS LIKE 'SK%'
+
+UPDATE dmdt_ct_ck_sk
+SET LOAIDETAI='TR'
+WHERE MS LIKE 'TR%'
+
+

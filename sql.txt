@@ -1,0 +1,175 @@
+﻿******** Cập nhật đơn vị => mã đơn vị bảng dm_detai_captruong *************
+
+UPDATE dm_detai_captruong
+SET DONVI='KT'
+WHERE DONVI='Khoa Kinh tế';
+
+UPDATE dm_detai_captruong
+SET DONVI='CM'
+WHERE DONVI='Khoa KT - CN - MT';
+
+UPDATE dm_detai_captruong
+SET DONVI='CT'
+WHERE DONVI='Phòng Tổ chức - CT';
+
+UPDATE dm_detai_captruong
+SET DONVI='DT'
+WHERE DONVI='Phòng Đào tạo';
+
+UPDATE dm_detai_captruong
+SET DONVI='GH'
+WHERE DONVI='Ban Giám Hiệu';
+
+UPDATE dm_detai_captruong
+SET DONVI='KD'
+WHERE DONVI='Phòng khảo thí và KĐ';
+
+UPDATE dm_detai_captruong
+SET DONVI='KH'
+WHERE DONVI='Phòng Kế hoạch - TV';
+
+UPDATE dm_detai_captruong
+SET DONVI='KT'
+WHERE DONVI='Khoa Kinh tế';
+
+UPDATE dm_detai_captruong
+SET DONVI='ML'
+WHERE DONVI='Khoa Mác-Lê';
+
+UPDATE dm_detai_captruong
+SET DONVI='NN'
+WHERE DONVI='Khoa Nông nghiệp';
+
+UPDATE dm_detai_captruong
+SET DONVI='NT'
+WHERE DONVI='TT Nghiên cứu - PTNT';
+
+UPDATE dm_detai_captruong
+SET DONVI='NV'
+WHERE DONVI='TT KHXH & NV';
+
+UPDATE dm_detai_captruong
+SET DONVI='QL'
+WHERE DONVI='Phòng QLKH - HTQT';
+
+UPDATE dm_detai_captruong
+SET DONVI='QP'
+WHERE DONVI='BM Quốc Phòng';
+
+UPDATE dm_detai_captruong
+SET DONVI='SP'
+WHERE DONVI='Khoa Sư phạm';
+
+UPDATE dm_detai_captruong
+SET DONVI='SV'
+WHERE DONVI='Phòng Công tác-SV';
+
+UPDATE dm_detai_captruong
+SET DONVI='TB'
+WHERE DONVI='Phòng Quản trị - TB';
+
+UPDATE dm_detai_captruong
+SET DONVI='TC'
+WHERE DONVI='BM Thể chất';
+
+UPDATE dm_detai_captruong
+SET DONVI='TH'
+WHERE DONVI='TT Tin học';
+
+UPDATE dm_detai_captruong
+SET DONVI='TL'
+WHERE DONVI='TT Tạo nguồn NL';
+
+UPDATE dm_detai_captruong
+SET DONVI='TN'
+WHERE DONVI='TT Ngoại ngữ';
+
+UPDATE dm_detai_captruong
+SET DONVI='TT'
+WHERE DONVI='Phòng Thanh tra - PC';
+
+UPDATE dm_detai_captruong
+SET DONVI='TV'
+WHERE DONVI='Thư viện';
+
+UPDATE dm_detai_captruong
+SET DONVI='VH'
+WHERE DONVI='Khoa Văn hoá - NT';
+
+
+******** Cập nhật Hiện trạng => mã hiện trạng dm_detai_captruong *************
+
+UPDATE dm_detai_captruong
+SET HTDETAI='1'
+WHERE HTDETAI='Chờ Ký HĐ';
+
+UPDATE dm_detai_captruong
+SET HTDETAI='2'
+WHERE HTDETAI='Đang TH';
+
+UPDATE dm_detai_captruong
+SET HTDETAI='3'
+WHERE HTDETAI='Đã NT';
+
+UPDATE dm_detai_captruong
+SET HTDETAI='4'
+WHERE HTDETAI='Ngưng TH';
+
+
+UPDATE dm_detai_captruong
+SET HTDETAI='3'
+WHERE HTDETAI='Đã NT';
+
+
+
+
+
+
+SELECT * FROM `dm_detai_captruong` WHERE MSDT = '11.01..SP'
+
+
+
+
+
+UPDATE dm_detai_captruong
+SET XEPLOAI='1'
+WHERE XEPLOAI LIKE 'Đạt%';
+
+
+UPDATE dm_detai_captruong
+SET XEPLOAI='1'
+WHERE XEPLOAI LIKE 'TB%';
+
+UPDATE dm_detai_captruong
+SET XEPLOAI='1'
+WHERE XEPLOAI LIKE 'Trung bình%';
+
+UPDATE dm_detai_captruong
+SET XEPLOAI='1'
+WHERE XEPLOAI LIKE 'Trung Bình%';
+
+UPDATE dm_detai_captruong
+SET XEPLOAI='2'
+WHERE XEPLOAI LIKE 'Khá%';
+
+UPDATE dm_detai_captruong
+SET XEPLOAI='2'
+WHERE XEPLOAI LIKE 'Khá%';
+
+
+UPDATE dm_detai_captruong
+SET XEPLOAI='3'
+WHERE XEPLOAI LIKE 'TỐT%';
+
+UPDATE dm_detai_captruong
+SET XEPLOAI='4'
+WHERE XEPLOAI LIKE 'XUẤT SẮC%';
+
+UPDATE dm_detai_captruong
+SET XEPLOAI='4'
+WHERE XEPLOAI LIKE 'Xuất sắc%';
+
+
+UPDATE dm_detai_captruong
+SET XEPLOAI='4'
+WHERE XEPLOAI IS NULL
