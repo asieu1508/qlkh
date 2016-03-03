@@ -25,7 +25,8 @@ $(function(){
 });
 $(function() {
   $('#filter').click(function() {
-    var namxb    = $('#namxb').val();
+    var namxbbd  = $('#namxbBĐ').val();
+    var namxbkt  = $('#namxbKT').val();
     var gioitinh = $('#gioitinh').val();
     var donvi    = $('#donvi').val();
 
@@ -33,7 +34,8 @@ $(function() {
         type: 'post',
         url: base_url + 'book/getStatistics/',
         data: {
-          namxb   : namxb,
+          namxbbd   : namxbbd,
+          namxbkt   : namxbkt,
           donvi    : donvi,
           gioitinh : gioitinh,
         },

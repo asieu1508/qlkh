@@ -17,9 +17,17 @@
     <link rel="stylesheet" href="<?php echo base_url();?>assets/themes/default/js/wave-effect/waves.min.css">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/themes/default/css/style.css">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/themes/default/css/responsive.css">
-    
-    
+        
     <script src="<?php echo base_url();?>assets/themes/default/js/jquery.js"></script>
+    <script>
+        var base_url = '<?php echo base_url() ?>';
+        var ckeditor_congig = {
+            base_url : '<?php echo base_url() ?>',
+            connector: 'ckfinder/connector',
+            html_path: 'ckfinder/html'
+
+        }
+    </script>
     <script src="<?php echo base_url();?>assets/themes/default/js/wave-effect/waves.min.js"></script>
     <script src="<?php echo base_url();?>assets/themes/default/js/jquery.nicescroll.js"></script>
     <script src="<?php echo base_url();?>assets/themes/default/js/jquery.twbsPagination.min.js"></script>
@@ -52,7 +60,6 @@
     <script src="<?php echo base_url();?>assets/themes/default/js/wow/wow.js"></script>
 
 <?php
-	/** -- Copy from here -- */
     if(!empty($meta))
     foreach($meta as $name=>$content){
         echo "\n\t\t";
@@ -76,13 +83,10 @@
             echo "\n\t\t";
             ?><script src="<?php echo $file; ?>"></script><?php
     } echo "\n\t";
- 
-    /** -- to here -- */
 ?>
   
   <script src="<?php echo base_url();?>assets/themes/default/js/myscript.js"></script>
   <script>
-  var base_url = '<?php echo base_url() ?>';
   new WOW().init();
   </script>
 </head>

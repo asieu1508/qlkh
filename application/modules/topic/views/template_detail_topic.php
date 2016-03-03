@@ -157,7 +157,7 @@
                 </li>
                 <li style="width:100%">
                     <label class="text-head">Ý kiến hội đồng</label>
-                    <textarea name="ykhd" id="" class="form-control" rows="3"><?php echo $value['YKIENHD'] ?></textarea>
+                    <textarea name="ykhd" id="editor" class="form-control ckeditor" rows="3"><?php echo $value['YKIENHD'] ?></textarea>
                 </li>
             </ul>
             <div class="div text-center clear">

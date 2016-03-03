@@ -127,7 +127,7 @@
                 </li>
                 <li style="width:100%">
                     <label class="text-head">Ý kiến hội đồng</label>
-                    <textarea name="ykhd" id="" class="form-control" rows="3"></textarea>
+                    <textarea name="ykhd" id="editor" class="form-control ckeditor" rows="3"></textarea>
                 </li>
             </ul>
             <div class="clear text-center">
@@ -138,7 +138,7 @@
       </form>
       <div id="to_top_2"></div>
   </section>
-  <script>
+<script>
     getMaxNumberContractByDepartmentId()
     $('#donvi').change(function(event) {
       getMaxNumberContractByDepartmentId();
@@ -172,4 +172,4 @@
       });
       
     }
-  </script>
+</script>

@@ -192,17 +192,21 @@ class Book extends CI_Controller{
     public function getStatistics() {
         $this->load->Model("model_book");
 
-        $namxb    = $_REQUEST['namxb'];
+        $namxbbd    = $_REQUEST['namxbbd'];
+        $namxbkt    = $_REQUEST['namxbkt'];
         $donvi     = $_REQUEST['donvi'];
         $gioitinh  = $_REQUEST['gioitinh'];
 
-        if ($namxb == '' && $donvi == -1 && $gioitinh == -1) {
+        if ($namxbbd == '' && $namxbbd == '' && $donvi == -1 && $gioitinh == -1) {
            $arr = $this->model_book->listAllDesc();
         }
         else {
             $str = '';
-            if ($namxb != '') {
-                $str .= "NAMXB >= '".$namxb. "' AND ";
+            if ($namxbbd != '') {
+                $str .= "NAMXB >= '".$namxbbd. "' AND ";
+            }
+            if ($namxbkt != '') {
+                $str .= "NAMXB <= '".$namxbkt. "' AND ";
             }
             if ($donvi != -1) {
                 $str  .= "DONVI = '".$donvi. "' AND ";

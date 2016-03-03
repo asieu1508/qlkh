@@ -15,6 +15,7 @@ class Topic extends CI_Controller{
        $this->output->set_template('default');
        $this->load->js('assets/themes/default/js/topic.js');
        $this->load->js('assets/themes/default/js/jquery.mask.js');
+       $this->load->js('assets/fckeditor/ckeditor/ckeditor.js');
     }
     public function index()
     {

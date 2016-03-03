@@ -86,6 +86,7 @@ img {
 /************** Begin form element **************/
 .form-control {
     display: block;
+    font-family: 'Roboto Condensed', sans-serif;
     width: 100%;
     padding: 0 12px;
     line-height: 34px;
@@ -120,6 +121,7 @@ select.form-control {
 }
 textarea.form-control {
     height: auto;
+    line-height: 1.5;
 }
 input[type="text"]:disabled {
     background: #F0F0F0;
@@ -1588,3 +1590,6 @@ fieldset legend {
     color: #000
 }
 
+.view.tool_panel {
+    display: none;
+}

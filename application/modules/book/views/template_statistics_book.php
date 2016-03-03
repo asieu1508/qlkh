@@ -19,8 +19,12 @@
         <legend>Chọn điều kiện:</legend>
         <ul>
           <li>
-            <label class="head-text">Năm</label>
-            <input type="text" id="namxb" name="namxb" class="form-control">
+            <label class="head-text">Từ năm</label>
+            <input type="text" id="namxbBĐ" name="namxbbd" class="form-control">
+          </li>
+          <li>
+            <label class="head-text">Đến năm</label>
+            <input type="text" id="namxbKT" name="namxbkt" class="form-control">
           </li>
           <li>
             <label class="head-text">Đơn vị</label>
