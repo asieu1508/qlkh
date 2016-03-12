@@ -1,7 +1,3 @@
-<?php
-// session_start();
-// echo '<pre>'; print_r($this->session->all_userdata());
-?>
       <div class="login">
         <div class="head">
           <a href="index.php" class="logo"><img src="<?php echo base_url();?>assets/themes/default/images/logo.png" alt="Phòng khám tư nhân bác sĩ tàu" /></a>

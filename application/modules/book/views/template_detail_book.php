@@ -126,3 +126,23 @@
       </form>
       <div id="to_top_2"></div>
   </section>
+  <script>
+    $( "#frmUpdate" ).validate({
+      rules: {
+          tensach: {
+            required: true,
+          },
+          tentg: {
+            required: true
+          },
+      },
+      messages: {
+        tensach: {
+          required: jQuery.validator.format("Tên sách không được bỏ trống"),
+        },
+        tentg: {
+          required: jQuery.validator.format("Tên tác giả không được bỏ trống"),
+        },
+      }
+    });
+</script>

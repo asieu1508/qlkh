@@ -11,8 +11,10 @@ class Document extends CI_Controller{
     }
     private function _init()
     {
-       $this->output->set_template('default');
-       $this->load->js('assets/themes/default/js/document.js');
+        $this->output->set_template('default');
+        $data['menu'] = $this->hdclass->showMenu();
+        $this->load->view('template_sidebar', $data);
+        $this->load->js('assets/themes/default/js/document.js');
     }
     public function index()
     {
@@ -20,7 +22,6 @@ class Document extends CI_Controller{
         $this->load->Model("model_document");
         $data['content']        = $this->model_document->selectLimit(9,0);
         $data['total_document'] = $this->model_document->countAll();
-        $this->load->view('template_sidebar');
         $this->load->view('template_list_document', $data);
     }
     public function selectPage(){
@@ -41,7 +42,6 @@ class Document extends CI_Controller{
         $data['hientrang']= $this->model_status_document->listAll();
         $data['loaitlgd']= $this->model_type_document->listAll();
         $data['chuyenmuc']= $this->model_catalogue->listAll();
-        $this->load->view('template_sidebar');
         $this->load->view('template_add_document',  $data);
     }
 
@@ -58,7 +58,6 @@ class Document extends CI_Controller{
         $data['loaitlgd']= $this->model_type_document->listAll();
          $data['chuyenmuc']= $this->model_catalogue->listAll();
         $data['url'] = 'document/update';
-        $this->load->view('template_sidebar');
         $this->load->view('template_detail_document',  $data);
     }
     
@@ -100,7 +99,7 @@ class Document extends CI_Controller{
             }
         }
         else {
-                echo "Trang không tồn tại!";
+            redirect('/my404', 'refresh');
         }
     }
 
@@ -141,7 +140,7 @@ class Document extends CI_Controller{
             }
         }
         else {
-                echo "Trang không tồn tại!";
+            redirect('/my404', 'refresh');
         }
     }
     public function delete() {
@@ -218,7 +217,6 @@ class Document extends CI_Controller{
             $data['content'] = $this->model_document->search($q);
         }
 
-        $this->load->view('template_sidebar');
         $this->load->view('template_list_search_document', $data);
     }
     public function statistics() {
@@ -232,7 +230,6 @@ class Document extends CI_Controller{
         $data['dmKhoa']    = $this->model_department->listAll();
         $data['loaitlgd']    = $this->model_type_document->listAll();
 
-        $this->load->view('template_sidebar');
         $this->load->view('template_statistics_document', $data);
     }
 

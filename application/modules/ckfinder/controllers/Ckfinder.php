@@ -17,6 +17,10 @@ class Ckfinder extends CI_Controller {
 	public function connector() {
 		$userInfo = $this->session->userdata('user');
 		define('USER_FOLDER_UPLOAD', 'qlkh/upload/user/'.$userInfo['username']);
+
+		$flag = $this->session->userdata['logged_in'];
+
+		define('CAN_USE_CKFINDER', $flag);
 		require_once "./assets/fckeditor/ckfinder/core/connector/php/connector.php";
 	}
 }

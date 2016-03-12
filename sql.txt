@@ -2,99 +2,96 @@
 
 UPDATE dm_detai_captruong
 SET DONVI='KT'
-WHERE DONVI='Khoa Kinh tế';
+WHERE MSDT LIKE '%KT';
 
 UPDATE dm_detai_captruong
 SET DONVI='CM'
-WHERE DONVI='Khoa KT - CN - MT';
+WHERE MSDT LIKE '%CM';
 
 UPDATE dm_detai_captruong
 SET DONVI='CT'
-WHERE DONVI='Phòng Tổ chức - CT';
+WHERE MSDT LIKE '%CT';
 
 UPDATE dm_detai_captruong
 SET DONVI='DT'
-WHERE DONVI='Phòng Đào tạo';
+WHERE MSDT LIKE '%DT';
 
 UPDATE dm_detai_captruong
 SET DONVI='GH'
-WHERE DONVI='Ban Giám Hiệu';
+WHERE MSDT LIKE '%GH';
 
 UPDATE dm_detai_captruong
 SET DONVI='KD'
-WHERE DONVI='Phòng khảo thí và KĐ';
+WHERE MSDT LIKE '%KD';
 
 UPDATE dm_detai_captruong
 SET DONVI='KH'
-WHERE DONVI='Phòng Kế hoạch - TV';
+WHERE MSDT LIKE '%KH';
 
-UPDATE dm_detai_captruong
-SET DONVI='KT'
-WHERE DONVI='Khoa Kinh tế';
 
 UPDATE dm_detai_captruong
 SET DONVI='ML'
-WHERE DONVI='Khoa Mác-Lê';
+WHERE MSDT LIKE '%ML';
 
 UPDATE dm_detai_captruong
 SET DONVI='NN'
-WHERE DONVI='Khoa Nông nghiệp';
+WHERE MSDT LIKE '%NN';
 
 UPDATE dm_detai_captruong
 SET DONVI='NT'
-WHERE DONVI='TT Nghiên cứu - PTNT';
+WHERE MSDT LIKE '%NT';
 
 UPDATE dm_detai_captruong
 SET DONVI='NV'
-WHERE DONVI='TT KHXH & NV';
+WHERE MSDT LIKE '%NV';
 
 UPDATE dm_detai_captruong
 SET DONVI='QL'
-WHERE DONVI='Phòng QLKH - HTQT';
+WHERE MSDT LIKE '%QL';
 
 UPDATE dm_detai_captruong
 SET DONVI='QP'
-WHERE DONVI='BM Quốc Phòng';
+WHERE MSDT LIKE '%QP';
 
 UPDATE dm_detai_captruong
 SET DONVI='SP'
-WHERE DONVI='Khoa Sư phạm';
+WHERE MSDT LIKE '%SP';
 
 UPDATE dm_detai_captruong
 SET DONVI='SV'
-WHERE DONVI='Phòng Công tác-SV';
+WHERE MSDT LIKE '%SV';
 
 UPDATE dm_detai_captruong
 SET DONVI='TB'
-WHERE DONVI='Phòng Quản trị - TB';
+WHERE MSDT LIKE '%TB';
 
 UPDATE dm_detai_captruong
 SET DONVI='TC'
-WHERE DONVI='BM Thể chất';
+WHERE MSDT LIKE '%TC';
 
 UPDATE dm_detai_captruong
 SET DONVI='TH'
-WHERE DONVI='TT Tin học';
+WHERE MSDT LIKE '%TH';
 
 UPDATE dm_detai_captruong
 SET DONVI='TL'
-WHERE DONVI='TT Tạo nguồn NL';
+WHERE MSDT LIKE '%TL';
 
 UPDATE dm_detai_captruong
 SET DONVI='TN'
-WHERE DONVI='TT Ngoại ngữ';
+WHERE MSDT LIKE '%TN';
 
 UPDATE dm_detai_captruong
 SET DONVI='TT'
-WHERE DONVI='Phòng Thanh tra - PC';
+WHERE MSDT LIKE '%TT';
 
 UPDATE dm_detai_captruong
 SET DONVI='TV'
-WHERE DONVI='Thư viện';
+WHERE MSDT LIKE '%TV';
 
 UPDATE dm_detai_captruong
 SET DONVI='VH'
-WHERE DONVI='Khoa Văn hoá - NT';
+WHERE MSDT LIKE '%VH';
 
 
 ******** Cập nhật Hiện trạng => mã hiện trạng dm_detai_captruong *************

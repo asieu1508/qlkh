@@ -143,3 +143,31 @@
       </form>
       <div id="to_top_2"></div>
   </section>
+
+
+  <script>
+    $( "#frmUpdate" ).validate({
+      rules: {
+          mstlgd: {
+            required: true,
+          },
+          tentlgd: {
+            required: true
+          },
+          tentg: {
+            required: true
+          }
+      },
+      messages: {
+        mstlgd: {
+          required: jQuery.validator.format("Mã số TLGD không được bỏ trống"),
+        },
+        tentlgd: {
+          required: jQuery.validator.format("Tên TLGD không được bỏ trống"),
+        },
+        tentg: {
+          required: jQuery.validator.format("Tên tác giả không được bỏ trống"),
+        } 
+      }
+    });
+</script>

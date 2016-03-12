@@ -1,17 +1,6 @@
 ﻿
 window.onload = function() {
     $('.overlays').remove();
-    
-    var sId = readCookie('sidebar');
-    if (sId == 1) {
-        $('body').addClass('sidebar-mini');
-        widthLoad();
-    }
-    else {
-        $('body').removeClass('sidebar-mini');
-        widthLoad();
-    }
-    // widthLoad();
 }
 $(function() {
     $('.mainMenu .icon').click(function(event) {

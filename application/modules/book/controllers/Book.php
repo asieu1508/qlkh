@@ -11,8 +11,10 @@ class Book extends CI_Controller{
     }
     private function _init()
     {
-       $this->output->set_template('default');
-       $this->load->js('assets/themes/default/js/book.js');
+        $this->output->set_template('default');
+        $data['menu'] = $this->hdclass->showMenu();
+        $this->load->view('template_sidebar', $data);
+        $this->load->js('assets/themes/default/js/book.js');
     }
     public function index()
     {
@@ -20,7 +22,6 @@ class Book extends CI_Controller{
         $this->load->Model("model_book");
         $data['content']        = $this->model_book->listAllDesc();
         $data['total_book'] = $this->model_book->countAll();
-        $this->load->view('template_sidebar');
         $this->load->view('template_list_book', $data);
     }
     public function add()
@@ -34,7 +35,6 @@ class Book extends CI_Controller{
         $data['nhaxuatban']= $this->model_nxb->listAll();
         $data['quocgia']= $this->model_quocgia->listAll();
         $data['theloaisach']= $this->model_theloaisach->listAll();
-        $this->load->view('template_sidebar');
         $this->load->view('template_add_book',  $data);
     }
     public function insert()
@@ -72,7 +72,7 @@ class Book extends CI_Controller{
             }
         }
         else {
-                echo "Trang không tồn tại!";
+            redirect('/my404', 'refresh');
         }
     }
     public function edit($id)
@@ -88,7 +88,6 @@ class Book extends CI_Controller{
         $data['quocgia']= $this->model_quocgia->listAll();
         $data['theloaisach']= $this->model_theloaisach->listAll();
         $data['content']= $this->model_book->detail($id);
-        $this->load->view('template_sidebar');
         $this->load->view('template_detail_book',  $data);
     }
     public function update()
@@ -127,7 +126,7 @@ class Book extends CI_Controller{
             }
         }
         else {
-                echo "Trang không tồn tại!";
+            redirect('/my404', 'refresh');
         }
     }
     public function delete() {
@@ -171,8 +170,6 @@ class Book extends CI_Controller{
             $q = strtolower($this->input->post('search'));
             $data['content'] = $this->model_book->search($q);
         }
-
-        $this->load->view('template_sidebar');
         $this->load->view('template_list_search_book', $data);
     }
      public function statistics() {
@@ -185,8 +182,6 @@ class Book extends CI_Controller{
 
         $data['dmKhoa']= $this->model_department->listAll();
         $data['nhaxuatban']= $this->model_nxb->listAll();
-
-        $this->load->view('template_sidebar');
         $this->load->view('template_statistics_book', $data);
     }
     public function getStatistics() {

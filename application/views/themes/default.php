@@ -54,6 +54,9 @@
 
     <link rel="stylesheet" href="<?php echo base_url();?>assets/themes/default/js/zurb/responsive-tables.css">
     <script src="<?php echo base_url();?>assets/themes/default/js/zurb/responsive-tables.js"></script>
+    
+    <link rel="stylesheet" href="<?php echo base_url();?>assets/themes/default/js/jqTree/jqtree.css">
+    <script src="<?php echo base_url();?>assets/themes/default/js/jqTree/tree.jquery.js"></script>
 
     <!-- google map -->
     <script src="<?php echo base_url();?>assets/themes/default/js/geocomplete.js"></script>

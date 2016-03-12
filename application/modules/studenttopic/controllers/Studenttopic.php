@@ -12,8 +12,11 @@ class Studenttopic extends CI_Controller{
     }
     private function _init()
     {
-       $this->output->set_template('default');
-       $this->load->js('assets/themes/default/js/studenttopic.js');
+        $this->output->set_template('default');
+        $this->output->set_template('default');
+        $data['menu'] = $this->hdclass->showMenu();
+        $this->load->view('template_sidebar', $data);
+        $this->load->js('assets/themes/default/js/studenttopic.js');
     }
     public function index()
     {
@@ -21,7 +24,6 @@ class Studenttopic extends CI_Controller{
         $this->load->Model("model_student_topic");
         $data['content'] = $this->model_student_topic->selectLimit(9,0);
         $data['total_topic']    = $this->model_student_topic->countAll();
-        $this->load->view('template_sidebar');
         $this->load->view('template_list_student', $data);
     }
     public function selectPage(){
@@ -35,11 +37,11 @@ class Studenttopic extends CI_Controller{
     {
         $this->load->Model("model_department");
         $this->load->Model("model_status");
-        $this->load->Model("model_type_document");
+        $this->load->Model("model_rank");
         $data['url'] = 'document/insert';
         $data['dmKhoa']= $this->model_department->listAll();
         $data['hientrang']= $this->model_status->listAll();
-        $this->load->view('template_sidebar');
+        $data['xeploai']= $this->model_rank->listAll();
         $this->load->view('template_add_student',  $data);
     }
 
@@ -48,11 +50,12 @@ class Studenttopic extends CI_Controller{
         $this->load->Model("model_department");
         $this->load->Model("model_status");
         $this->load->Model("model_student_topic");
+         $this->load->Model("model_rank");
         $data['content']= $this->model_student_topic->detail($id);
         $data['dmKhoa']= $this->model_department->listAll();
         $data['hientrang']= $this->model_status->listAll();
+        $data['xeploai']= $this->model_rank->listAll();
         $data['url'] = 'document/update';
-        $this->load->view('template_sidebar');
         $this->load->view('template_detail_student',  $data);
     }
     
@@ -95,7 +98,7 @@ class Studenttopic extends CI_Controller{
             }
         }
         else {
-                echo "Trang không tồn tại!";
+            redirect('/my404', 'refresh');
         }
     }
 
@@ -137,7 +140,7 @@ class Studenttopic extends CI_Controller{
             }
         }
         else {
-                echo "Trang không tồn tại!";
+            redirect('/my404', 'refresh');
         }
     }
     public function delete() {
@@ -216,7 +219,6 @@ class Studenttopic extends CI_Controller{
         $data['dmKhoa']    = $this->model_department->listAll();
         $data['xeploai']    = $this->model_rank->listAll();
 
-        $this->load->view('template_sidebar');
         $this->load->view('template_statistics_student', $data);
     }
     public function getStatistics() {
@@ -368,7 +370,6 @@ class Studenttopic extends CI_Controller{
             $data['content'] = $this->model_student_topic->search($q);
         }
 
-        $this->load->view('template_sidebar');
         $this->load->view('template_list_search_student', $data);
     }
 }

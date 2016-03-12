@@ -6,16 +6,20 @@ class Topic extends CI_Controller{
  
         $this->load->helper(array('url', 'date'));
         $this->load->library(array('session', 'hdclass'));
+       
         $this->hdclass->check_logined();
         $this->_init();
+        
         
     }
     private function _init()
     {
-       $this->output->set_template('default');
-       $this->load->js('assets/themes/default/js/topic.js');
-       $this->load->js('assets/themes/default/js/jquery.mask.js');
-       $this->load->js('assets/fckeditor/ckeditor/ckeditor.js');
+        $this->output->set_template('default');
+        $data['menu'] = $this->hdclass->showMenu();
+        $this->load->view('template_sidebar', $data);
+        $this->load->js('assets/themes/default/js/topic.js');
+        $this->load->js('assets/themes/default/js/jquery.mask.js');
+        $this->load->js('assets/fckeditor/ckeditor/ckeditor.js');
     }
     public function index()
     {
@@ -23,7 +27,7 @@ class Topic extends CI_Controller{
         $this->load->Model("model_topic");
         $data['content'] = $this->model_topic->selectLimit(9,0);
         $data['total_topic']    = $this->model_topic->countAll();
-        $this->load->view('template_sidebar');
+        
         $this->load->view('template_list_topic', $data);
     }
     public function selectPage(){
@@ -42,7 +46,6 @@ class Topic extends CI_Controller{
         $data['dmKhoa']= $this->model_department->listAll();
         $data['hientrang']= $this->model_status->listAll();
         $data['xeploai']= $this->model_rank->listAll();
-        $this->load->view('template_sidebar');
         $this->load->view('template_add_topic',  $data);
     }
 
@@ -106,7 +109,7 @@ class Topic extends CI_Controller{
             }
         }
         else {
-                echo "Trang không tồn tại!";
+            redirect('/my404', 'refresh');
         }
     }
 
@@ -156,7 +159,7 @@ class Topic extends CI_Controller{
             }
         }
         else {
-                echo "Trang không tồn tại!";
+            redirect('/my404', 'refresh');
         }
     }
     public function delete() {
@@ -217,7 +220,6 @@ class Topic extends CI_Controller{
         $data['dmKhoa']    = $this->model_department->listAll();
         $data['xeploai']    = $this->model_rank->listAll();
 
-        $this->load->view('template_sidebar');
         $this->load->view('template_statistics_topic', $data);
     }
     public function getStatistics() {
@@ -331,13 +333,13 @@ class Topic extends CI_Controller{
             $objPHPExcel->getActiveSheet()->setCellValue('C'.$i, $value['TENDT']);
             $objPHPExcel->getActiveSheet()->setCellValue('D'.$i, $value['CNDT']);
             if ($value['PHAI']==1) {
-                $objPHPExcel->getActiveSheet()->setCellValue('D'.$i, 'Nam');
+                $objPHPExcel->getActiveSheet()->setCellValue('E'.$i, 'Nam');
             }
             else if ($value['PHAI']== 0) {
-                $objPHPExcel->getActiveSheet()->setCellValue('D'.$i, 'Nữ');
+                $objPHPExcel->getActiveSheet()->setCellValue('E'.$i, 'Nữ');
             }
             else {
-                $objPHPExcel->getActiveSheet()->setCellValue('D'.$i, 'Nam - Nữ');
+                $objPHPExcel->getActiveSheet()->setCellValue('E'.$i, 'Nam - Nữ');
             }
             $objPHPExcel->getActiveSheet()->setCellValue('F'.$i, $value['TENKHOA']);
             $objPHPExcel->getActiveSheet()->setCellValue('G'.$i, $value['TGBATDAU']);
@@ -396,7 +398,6 @@ class Topic extends CI_Controller{
             $data['content'] = $this->model_topic->search($q);
         }
 
-        $this->load->view('template_sidebar');
         $this->load->view('template_list_search_topic', $data);
     }
     public function excel() {

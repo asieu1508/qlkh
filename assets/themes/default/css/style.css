@@ -29,6 +29,7 @@ body {
 a {
     cursor: pointer;
     color: #006B3A;
+    text-decoration: none;
 }
 a:active, a:focus {
     outline: 0;
@@ -115,7 +116,7 @@ img {
     color: #008D4C;
 }
 select.form-control {
-    height: 36px;
+    height: 35px;
     background: transparent;
     padding: 0;
 }
@@ -552,6 +553,9 @@ button:focus {
     position: relative;
     white-space: nowrap;
 }
+.sidebar .menu li.active a {
+    background: #3A3A3A;
+}
 
 .sidebar .menu li a {
     display: block;
@@ -567,14 +571,14 @@ button:focus {
          -o-transition: all .25s ease-in-out;
             transition: all .25s ease-in-out;
 }
-.sidebar .menu li .text {
+.sidebar .menu > li > .text {
     -webkit-transition: all .25s ease-in-out;
        -moz-transition: all .25s ease-in-out;
         -ms-transition: all .25s ease-in-out;
          -o-transition: all .25s ease-in-out;
             transition: all .25s ease-in-out;
 }
-.sidebar .menu ul {
+.sidebar .menu ul ul {
     display: none;
     position: absolute;
     top: 0;
@@ -582,7 +586,12 @@ button:focus {
     width: 200px;
     z-index: 1000;
 }
-
+.sidebar .menu ul li:hover a {
+    background: #008d4c;
+}
+.sidebar .menu ul li li:hover a {
+    background: #00713D;
+}
 .sidebar-mini .menu ul:before {
     content: '';
     position: absolute;
@@ -592,7 +601,7 @@ button:focus {
     border-top: 5px solid #006B3A;
     z-index: 1002;
 }
-.sidebar .menu ul li {
+.sidebar .menu ul ul li {
     background: #3A4B52;
 }
 .sidebar .menu > li:hover > a {
@@ -604,61 +613,40 @@ button:focus {
 .sidebar .menu > li:hover ul li:hover a {
      background: #008d4c;
 }
-.sidebar-mini .menu > li .icon {
-    display: block;
-    font-size: 18px;
-    text-align: center
-}
+
 .sidebar-mini .sidebar {
     width: 50px;
 }
 .sidebar-mini .sidebar .head .logo {
     margin-left: -146px;
 }
-.sidebar-mini .sidebar .menu li .text {
-    background: #006B3A;
-    line-height: 26px;
-    width: 200px;
-    padding: 10px 10px;
-    display: inline-block;
-    vertical-align: top;
-    zoom: 1; /* Fix for IE7 */
-    *display: inline; /* Fix for IE7 */
-    opacity: 0;
-    display: none;
-}
-.sidebar-mini .sidebar .menu li:hover .text {
+.sidebar-mini .menu > ul > li > a .icon {
     display: block;
-    opacity: 1;
+    font-size: 18px;
+    text-align: center
+}
+.sidebar-mini .menu > ul > li > a .text {
+    display: none;
     position: absolute;
+    width: 200px;
+    line-height: 36px;
+    padding: 5px 10px;
     left: 100%;
     top: 0;
+    background: #006B3A;
 }
-.sidebar-mini .sidebar .menu ul {
+.sidebar-mini .menu > ul ul {
     top: 46px;
 }
+.sidebar-mini .menu > ul > li:hover > a > .text {
+    display: block
+}
+.sidebar-mini .menu > ul > li:hover ul, .sidebar-mini .menu > ul > li.activeX ul {
+    display: block
+}
 
-.sidebar .menu li ul.show {
-    display: block !important;
-}
-.sidebar-mini .sidebar .menu > li {
-    border-bottom: none;
-}
-.sidebar-mini .sidebar .menu li li {
-}
-.sidebar .menu li.activeX ul {
-    display: block;
-}
-.sidebar .menu li.activeX .text {
-    display: block;
-    opacity: 1;
-    position: absolute;
-    left: 100%;
-    top: 0;
-}
-.sidebar .menu li.activeX {
-    background: #006B3A
-}
+
+
 .body {
     z-index: 1;
     position: absolute;
@@ -899,7 +887,7 @@ ul.form-3 li:nth-child(3n) {
     height: 20px;
 }
 
-.delete, .save {
+.delete, .save, .edit {
     display: block;
     width: 100%;
     color: red;
@@ -914,6 +902,9 @@ ul.form-3 li:nth-child(3n) {
 }
 .save {
     color: #3BB50C;
+}
+.edit {
+    color: #006B3A;
 }
 .delete:hover, .save:hover {
     color: #283593;
@@ -1451,6 +1442,7 @@ button.close {
 
 .picker .picker__day {
     font-size: 16px;
+    text-align: center;
 }
 
 .ui-autocomplete .capitalize {
@@ -1593,3 +1585,31 @@ fieldset legend {
 .view.tool_panel {
     display: none;
 }
+.adminMenu ul {
+    margin: 0 30px;
+}
+.adminMenu ul li {
+    list-style: none;
+    border: 1px solid #ccc;
+    margin-bottom: 5px;
+    position: relative;
+}
+.adminMenu ul li a {
+    margin-top: 5px;
+    text-decoration: none;
+    display: block;
+    padding: 5px 10px;
+    
+}
+.adminMenu ul li a.delete {
+    display: inline-block;
+    vertical-align: top;
+    zoom: 1; /* Fix for IE7 */
+    *display: inline; /* Fix for IE7 */
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-top: 0;
+    width: 32px;
+    height: 32px
+;}

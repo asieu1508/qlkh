@@ -13,6 +13,7 @@
           <div class="autocomplate-success"></div>
       </form>
       <!-- End search -->
+      
      <h2 class="title"><i class='fa fa-list-ul'></i> 
         Kết quả tìm kiếm (Tổng số: <span class="total"><?php echo count($content) ?></span> đề tài)
       </h2>

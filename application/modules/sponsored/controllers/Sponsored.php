@@ -12,9 +12,11 @@ class Sponsored extends CI_Controller{
 
     private function _init()
     {
-       $this->output->set_template('default');
-       $this->load->js('assets/themes/default/js/sponsored.js');
-       $this->load->js('assets/themes/default/js/jquery.mask.js');
+        $this->output->set_template('default');
+        $data['menu'] = $this->hdclass->showMenu();
+        $this->load->view('template_sidebar', $data);
+        $this->load->js('assets/themes/default/js/sponsored.js');
+        $this->load->js('assets/themes/default/js/jquery.mask.js');
     }
  
     public function index()
@@ -24,7 +26,6 @@ class Sponsored extends CI_Controller{
         $this->load->Model("model_sponsored");
         $data['content'] = $this->model_sponsored->selectLimit(9,0);
         $data['total_topic']    = $this->model_sponsored->countAll();
-        $this->load->view('template_sidebar');
         $this->load->view('template_list_sponsored', $data);
     }
      public function selectPage(){
@@ -44,7 +45,6 @@ class Sponsored extends CI_Controller{
         $data['hientrang']= $this->model_status->listAll();
         $data['loaidetai']= $this->model_type_topic->listAll();
         $data['url'] = 'sponsored/insert';
-        $this->load->view('template_sidebar');
         $this->load->view('template_add_sponsored',  $data);
     }
     public function insert()
@@ -83,7 +83,7 @@ class Sponsored extends CI_Controller{
             }
         }
         else {
-                echo "Trang không tồn tại!";
+            redirect('/my404', 'refresh');
         }
     }
     public function edit($id)
@@ -97,7 +97,6 @@ class Sponsored extends CI_Controller{
         $data['hientrang']= $this->model_status->listAll();
         $data['loaidetai']= $this->model_type_topic->listAll();
         $data['url'] = 'sponsored/update';
-        $this->load->view('template_sidebar');
         $this->load->view('template_detail_sponsored',  $data);
     }
     public function update()
@@ -136,7 +135,7 @@ class Sponsored extends CI_Controller{
             }
         }
         else {
-                echo "Trang không tồn tại!";
+            redirect('/my404', 'refresh');
         }
     }
     public function search() {
@@ -182,7 +181,6 @@ class Sponsored extends CI_Controller{
         $data['dmKhoa']    = $this->model_department->listAll();
         $data['loaidetai']    = $this->model_type_topic->listAll();
 
-        $this->load->view('template_sidebar');
         $this->load->view('template_statistics_sponsored', $data);
     }
     public function getStatistics() {
@@ -313,7 +311,6 @@ class Sponsored extends CI_Controller{
             $data['content'] = $this->model_sponsored->search($q);
         }
 
-        $this->load->view('template_sidebar');
         $this->load->view('template_list_search_sponsored', $data);
     }
 }

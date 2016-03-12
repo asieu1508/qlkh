@@ -14,7 +14,7 @@
       </form>
       <!-- End search -->
 
-     <h2 class="title"><i class='fa fa-list-ul'></i> THÊM ĐỀ TÀI TLGD:</h2>
+     <h2 class="title"><i class='fa fa-list-ul'></i> THÊM ĐỀ TÀI ĐỀ TÀI SINH VIÊN:</h2>
     <?php if ($this->session->flashdata('flag') == 1) { ?>
         <div class="alert alert-success alert-dismissible fade in" role="alert">
           <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
@@ -96,7 +96,11 @@
                 </li>
                 <li>
                     <label class="text-head">Xếp loại</label>
-                      <input class="form-control" type="text" name="xeploai" value="">
+                      <select class="form-control" name="xeploai" id="xeploai">
+                      <?php foreach ($xeploai as $value) { ?>
+                          <option value="<?php echo $value['MALOAI'] ?>"><?php echo $value['TENLOAI'] ?></option>
+                      <?php } ?>
+                      </select>
                 </li>
                 <li>
                     <label class="text-head">Giấy chứng nhận</label>
@@ -111,7 +115,32 @@
       </form>
       <div id="to_top_2"></div>
   </section>
-
+<script>
+    $( "#frmUpdate" ).validate({
+      rules: {
+          msdt: {
+            required: true,
+          },
+          tendt: {
+            required: true
+          },
+          tensv: {
+            required: true
+          }
+      },
+      messages: {
+        msdt: {
+          required: jQuery.validator.format("Mã số đề tài không được bỏ trống"),
+        },
+        tendt: {
+          required: jQuery.validator.format("Tên đề tài không được bỏ trống"),
+        },
+        tensv: {
+          required: jQuery.validator.format("Tến inh viên không được bỏ trống"),
+        } 
+      }
+    });
+</script>
   <script>
     getMaxNumberContractByDepartmentId()
     $('#donvi').change(function(event) {

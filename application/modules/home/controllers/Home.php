@@ -12,8 +12,10 @@ class Home extends CI_Controller{
 
     private function _init()
     {
-       $this->output->set_template('default');
-       $this->load->js('assets/themes/default/js/numscroller-1.0.js');
+        $this->output->set_template('default');
+        $data['menu'] = $this->hdclass->showMenu();
+        $this->load->view('template_sidebar', $data);
+        $this->load->js('assets/themes/default/js/numscroller-1.0.js');
     }
  
     public function index()
@@ -45,7 +47,6 @@ class Home extends CI_Controller{
             $data['nckh'][$i] =  count($this->model_topic->countNumberTopicOfYear($fistDayOfyear , $lastDayofyear));
         }
 
-        $this->load->view('template_sidebar');
         $this->load->view('template_home', $data);
 
     }

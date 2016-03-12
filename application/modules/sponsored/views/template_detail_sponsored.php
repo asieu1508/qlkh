@@ -113,3 +113,29 @@
       </form>
       <div id="to_top_2"></div>
   </section>
+<script>
+    $( "#frmUpdate" ).validate({
+      rules: {
+          msdt: {
+            required: true,
+          },
+          tendt: {
+            required: true
+          },
+          cndt: {
+            required: true
+          }
+      },
+      messages: {
+        msdt: {
+          required: jQuery.validator.format("Mã số đề tài không được bỏ trống"),
+        },
+        tendt: {
+          required: jQuery.validator.format("Tên đề tài không được bỏ trống"),
+        },
+        cndt: {
+          required: jQuery.validator.format("Chủ nhiệm đề tài không được bỏ trống"),
+        } 
+      }
+    });
+</script>

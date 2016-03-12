@@ -102,4 +102,15 @@ class hdclass {
 		$m = $n-3;
 		return substr($sql, 0, $m);
 	}
+	function showMenu() {
+
+		$this->CI->load->Model("model_menu", "menu");
+		$items = $this->CI->menu->all();
+
+		// load the library and pass the array data
+		$this->CI->load->library("multi_menu");
+		$this->CI->multi_menu->set_items($items);
+        return $this->CI->multi_menu->render();
+	}
+
 }

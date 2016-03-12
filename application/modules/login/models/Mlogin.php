@@ -1,6 +1,6 @@
 <?php
 class Mlogin extends CI_Model{
-	protected $_table = "account";
+	protected $_table = "user";
 
 	public function __construct(){
 		parent::__construct();
@@ -8,9 +8,9 @@ class Mlogin extends CI_Model{
 	}
 
 	function a_fCheckUser( $a_UserInfo ){ 
-        $select = array('username', 'password', 'id_group', 'role');
-        $a_User  =   $this->db->select($select)->where('username', $a_UserInfo['username'])
-                                                ->where('password', $a_UserInfo['password'])
+        $select = '*';
+        $a_User  =   $this->db->select($select)->where('USERNAME', $a_UserInfo['USERNAME'])
+                                                ->where('PASSWORD', $a_UserInfo['PASSWORD'])
                                                 ->get($this->_table) 
                                                 ->row_array(); 
         if(count($a_User) >0) { 

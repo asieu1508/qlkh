@@ -116,7 +116,16 @@
                 </li>
                 <li>
                     <label class="text-head">Xếp loại</label>
-                      <input class="form-control" type="text" name="xeploai" value="<?php echo $value['XEPLOAI'] ?>">
+                    <select class="form-control" name="xeploai" id="xeploai">
+                      <?php foreach ($xeploai as $xl) { 
+                        if ($value['XEPLOAI'] == $xl['MALOAI']) { ?>
+                          <option selected="selected" value="<?php echo $xl['MALOAI'] ?>"><?php echo $xl['TENLOAI'] ?></option>
+                        <?php } else { ?>
+                          <option value="<?php echo $xl['MALOAI'] ?>"><?php echo $xl['TENLOAI'] ?></option>
+                      <?php }
+
+                      } ?>
+                      </select>
                 </li>
                 <li>
                     <label class="text-head">Giấy chứng nhận</label>
@@ -131,3 +140,29 @@
       </form>
       <div id="to_top_2"></div>
   </section>
+<script>
+    $( "#frmUpdate" ).validate({
+      rules: {
+          msdt: {
+            required: true,
+          },
+          tendt: {
+            required: true
+          },
+          tensv: {
+            required: true
+          }
+      },
+      messages: {
+        msdt: {
+          required: jQuery.validator.format("Mã số đề tài không được bỏ trống"),
+        },
+        tendt: {
+          required: jQuery.validator.format("Tên đề tài không được bỏ trống"),
+        },
+        tensv: {
+          required: jQuery.validator.format("Tến inh viên không được bỏ trống"),
+        } 
+      }
+    });
+</script>

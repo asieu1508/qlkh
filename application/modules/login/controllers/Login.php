@@ -22,12 +22,12 @@ class Login extends MX_Controller{
 
 		#Kiểm tra điều kiện validate 
 		if ($this->form_validation->run() == TRUE) { 
-			$a_UserInfo['username'] = $this->input->post('username');
-			$a_UserInfo['password'] = md5($this->input->post('password'));
-			$a_UserChecking = $this->mlogin->a_fCheckUser($a_UserInfo);
-			if ($a_UserChecking) {
+			$a_UserInfo['USERNAME'] = $this->input->post('username');
+			$a_UserInfo['PASSWORD'] = md5($this->input->post('password'));
+			$data = $this->mlogin->a_fCheckUser($a_UserInfo);
+			if ($data) {
 				$this->session->sess_expiration = '28800';
-				$this->session->set_userdata('user', $a_UserChecking);
+				$this->session->set_userdata('user', $data);
 				$this->session->set_userdata('logged_in', 'true');
 			} 
 			redirect(base_url('topic.html')); 

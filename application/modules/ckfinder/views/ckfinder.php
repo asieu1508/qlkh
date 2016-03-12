@@ -18,9 +18,6 @@
     .CKFinderFrameWindow {
       min-height: 400px;
     }
-    #sidebar_container .tool_panel {
-      display: none;
-    }
   </style>
 </head>
 <body class="CKFinderFrameWindow">
@@ -148,7 +145,7 @@
   </script>
   <script>
   function HideFolderPane(){
-     $("iframe").contents().find(".tool_panel").removeAttr('style');
+     $("iframe").contents().find("#sidebar_container .tool_panel b").hide(0);
   }
 
   $(function() {

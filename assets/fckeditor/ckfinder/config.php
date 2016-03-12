@@ -30,7 +30,7 @@ function CheckAuthentication()
 	// user logs in your system. To be able to use session variables don't
 	// forget to add session_start() at the top of this file.
 
-	return true;
+	return CAN_USE_CKFINDER;
 }
 
 // LicenseKey : Paste your license key here. If left blank, CKFinder will be
@@ -90,14 +90,14 @@ Thumbnails : thumbnails settings. All thumbnails will end up in the same
 directory, no matter the resource type.
 */
 $config['Thumbnails'] = Array(
-		'url' => $baseUrl . '_thumbs',
-		'directory' => $baseDir . '_thumbs',
-		'enabled' => true,
+		'url'          => $baseUrl . '_thumbs',
+		'directory'    => $baseDir . '_thumbs',
+		'enabled'      => true,
 		'directAccess' => false,
-		'maxWidth' => 100,
-		'maxHeight' => 100,
+		'maxWidth'     => 100,
+		'maxHeight'    => 100,
 		'bmpSupported' => false,
-		'quality' => 80);
+		'quality'      => 80);
 
 /*
 Set the maximum size of uploaded images. If an uploaded image is larger, it
